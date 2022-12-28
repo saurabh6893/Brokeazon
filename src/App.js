@@ -2,8 +2,9 @@ import { Route, Routes } from 'react-router-dom'
 import Navigation from './Components/Navigation'
 import Screen from './Components/Screen'
 import More from './Routes/More'
-import Signin from './Routes/Signin/Signin'
+
 import './Screen.styles.scss'
+import Authentication from './Routes/Authentication/Authentication'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Route path='/' element={<Navigation />}>
           <Route index element={<Screen />} />
           <Route path='/more' element={<More />} />
-          <Route path='/signin' element={<Signin />} />
+          <Route path='/auth' element={<Authentication />} />
         </Route>
       </Routes>
     </div>

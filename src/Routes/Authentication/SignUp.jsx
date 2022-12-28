@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from '../../Components/Button/Button'
 import Inputbox from '../../Components/FormComponent/inputbox'
-
+import './SignUp.scss'
 import {
   createAuthUserEmailandPassword,
   createUserDocFromAuth,
@@ -48,7 +48,7 @@ const SignUp = () => {
   }
 
   return (
-    <div>
+    <div className='sign-up-container'>
       <h1>SignUp</h1>
       <form onSubmit={handleSubmit}>
         <Inputbox

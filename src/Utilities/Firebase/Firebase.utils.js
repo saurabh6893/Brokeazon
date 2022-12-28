@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithRedirect,
+  signInWithEmailAndPassword,
 } from 'firebase/auth'
 // firebase authentication options
 
@@ -74,4 +75,9 @@ export const createUserDocFromAuth = async (brokeAuth, additionalInfo = {}) => {
 export const createAuthUserEmailandPassword = async (email, password) => {
   if (!email || !password) return
   return await createUserWithEmailAndPassword(auth, email, password)
+}
+
+export const signinAuthUserEmailandPassword = async (email, password) => {
+  if (!email || !password) return
+  return await signInWithEmailAndPassword(auth, email, password)
 }
