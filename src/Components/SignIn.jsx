@@ -34,7 +34,14 @@ const SignIn = () => {
       const res = await signinAuthUserEmailandPassword(email, password)
       console.log(res)
       resetForm()
-    } catch (error) {}
+    } catch (error) {
+      if (error.code === 'auth/wrong-password') {
+        alert('incorrect Password')
+      } else if (error.code === 'auth/user-not-found') {
+        alert('User Not Found')
+      }
+      console.log(error)
+    }
   }
 
   const handleChange = (event) => {
@@ -65,7 +72,7 @@ const SignIn = () => {
         />
         <div className='buttons-container'>
           <Button type='submit'>SignIn</Button>
-          <Button buttonType='google' onClick={logGoogleUser}>
+          <Button type='button' buttonType='google' onClick={logGoogleUser}>
             Google
           </Button>
         </div>
